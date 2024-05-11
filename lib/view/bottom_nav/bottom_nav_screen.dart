@@ -3,10 +3,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../bloc/cubit.dart';
 import '../../bloc/states.dart';
 import '../../constants/colors.dart';
+import '../../network/local/cache_helper.dart';
 
-class AppLayout extends StatelessWidget {
+class AppLayout extends StatefulWidget {
   const AppLayout({Key? key}) : super(key: key);
 
+  @override
+  State<AppLayout> createState() => _AppLayoutState();
+}
+
+class _AppLayoutState extends State<AppLayout> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    CacheHelper.saveData(key: 'islogout', value: false);
+  }
   @override
   Widget build(BuildContext context) {
     var cubit = AppCubit.get(context);

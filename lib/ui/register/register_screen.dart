@@ -214,7 +214,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                         isPrefix: false,
                         underlineBorder: true,
                         label: "Disease",
-                        hint: "enter your disease if you are a patient",
+                        hint: "enter your disease",
                         isEnabledBorder: true,
                         onChanged: (value){
                           disease = value;

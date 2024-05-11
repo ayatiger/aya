@@ -154,7 +154,7 @@ class _MyAppState extends State<MyApp> {
           AddRoom.routeName: (context) => AddRoom(),
           ChatScreen.routeName: (context) => ChatScreen(),
         },
-        home: userProvider.firebaseUser == null
+        home:CacheHelper.getData(key:'islogout')==true?  LoginScreen():userProvider.firebaseUser == null
             ? LoginScreen()
             : const AppLayout(),
         // initialRoute: userProvider.firebaseUser == null

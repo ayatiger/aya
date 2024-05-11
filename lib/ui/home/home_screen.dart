@@ -32,7 +32,7 @@ class _HomeScreen2State extends State<HomeScreen2> implements HomeNavigator {
   }
 
   @override
-  Widget build(BuildContext context) {
+    Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => viewModel,
       child: Stack(
@@ -51,12 +51,12 @@ class _HomeScreen2State extends State<HomeScreen2> implements HomeNavigator {
               ),
               centerTitle: true,
             ),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(AddRoom.routeName);
-              },
-              child: const Icon(Icons.add),
-            ),
+           // floatingActionButton: FloatingActionButton(
+           //    onPressed: () {
+           //      Navigator.of(context).pushNamed(AddRoom.routeName);
+           //    },
+           //    child: const Icon(Icons.add),
+           //  ),
             body: StreamBuilder<QuerySnapshot<Room>>(
               stream: DatabaseUtils.getRooms(),
               builder: (context, asyncSnapShot) {
@@ -165,60 +165,60 @@ class HomeScreenContent extends StatelessWidget {
   // Sample data for doctors
   final List<Doctor> doctors = [
     Doctor(
-      name: 'Dr. John Doe',
+      name: 'Dr. Mahmood Hanafy',
       rate: 4.5,
       address: '123 Main St, City',
-      imageUrl: 'assets/images/doctor1.jpg',
+      imageUrl: 'assets/images/2-178x300.jpg',
       specialization: 'Audiologist',
     ),
     Doctor(
-      name: 'Dr. Jane Smith',
+      name: 'Dr. Hadeer Ahmed',
       rate: 4.8,
       address: '456 Elm St, Town',
-      imageUrl: 'assets/images/doctor2.jpg',
+      imageUrl: 'assets/images/Picture1.png',
       specialization: 'Allergist',
     ),
     Doctor(
-      name: 'Dr. Sarah Johnson',
+      name: 'Dr. Mohamed Mandor',
       rate: 4.3,
       address: '789 Oak St, Village',
-      imageUrl: 'assets/images/doctor3.jpg',
-      specialization: 'Andrologists',
+      imageUrl: 'assets/images/5-235x300.png',
+      specialization: 'Optician',
     ),
     Doctor(
-      name: 'Dr. Michael Brown',
+      name: 'Dr. Mohamed Said',
       rate: 4.7,
       address: '101 Pine St, Town',
-      imageUrl: 'assets/images/doctor4.jpg',
-      specialization: 'Anesthesiologist',
+      imageUrl: 'assets/images/doctor-mohamed-said-elgamal-cardiology_20201115173019537.jpg',
+      specialization: 'Adult Cardiology',
     ),
     Doctor(
-      name: 'Dr. Emily Davis',
+      name: 'Dr. Eman Tantawy',
       rate: 4.6,
       address: '234 Cedar St, City',
-      imageUrl: 'assets/images/doctor5.jpg',
-      specialization: 'Cardiologist',
+      imageUrl: 'assets/images/doctor-eman-tantawy-dentistry_20230910123421142.jpg',
+      specialization: ' Cosmetic Dentistry',
     ),
     Doctor(
-      name: 'Dr. James Wilson',
+      name: 'Dr. Mohamed Hussein',
       rate: 4.9,
       address: '567 Maple St, Village',
-      imageUrl: 'assets/images/doctor6.jpg',
-      specialization: 'neurologist',
+      imageUrl: 'assets/images/doctor-mohamed-hussein-ophthalmology_20230427191331482.jpg',
+      specialization: 'Adult Spine Surgery',
     ),
     Doctor(
-      name: 'Dr. Olivia White',
+      name: 'Dr. Ahmed Lotfy',
       rate: 4.4,
       address: '890 Birch St, City',
-      imageUrl: 'assets/images/doctor7.jpg',
-      specialization: 'Dentist',
+      imageUrl: 'assets/images/ahmed---lotfy-elgamal-plastic-surgery_20220111213413724.jpg',
+      specialization: ' Facial Plastic Surgery',
     ),
     Doctor(
-      name: 'Dr. William Johnson',
+      name: 'Dr. Ahmed A Ghalwash',
       rate: 4.2,
       address: '432 Oak St, Town',
-      imageUrl: 'assets/images/doctor8.jpg',
-      specialization: 'Dermatologist',
+      imageUrl: 'assets/images/doctor-ahmed-ghalwash-gastroenterology-and-endoscopy_20210204012824767.jpg',
+      specialization: ' Adult Gastroenterology and Endoscopy',
     ),
     // Add more doctor data as needed
   ];

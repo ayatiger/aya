@@ -25,6 +25,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
   File? image;
 
   File? myFile;
+  File? myFile2;
 
   Future pickImage(ImageSource source, BuildContext context) async {
     try {
@@ -35,7 +36,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
       setState(() {
         this.image = imageTemporary;
         myFile = File(image.path);
+        myFile2 = File(image);
         CacheHelper.saveData(key: 'image', value: myFile);
+        CacheHelper.saveData(key: 'image2', value: myFile2);
       });
     } on PlatformException catch (e) {}
   }
@@ -128,7 +131,24 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               children: [
                                 Align(
                                   alignment: Alignment.center,
-                                  child: image != null
+                                  child:CacheHelper.getData(key:'image')!=null? SizedBox(
+                                    width: 120,
+                                    height: 120,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2.2),
+                                      child: Container(
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: ClipOval(
+                                          child: Image.file(
+                                            CacheHelper.getData(key:'image2'),
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ):image != null
                                       ? SizedBox(
                                           width: 120,
                                           height: 120,
@@ -232,6 +252,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     const SizedBox(height: 50),
                     ElevatedButton(
                       onPressed: () {
+                        CacheHelper.saveData(key: 'islogout', value: true);
                         Navigator.pushReplacement(
                           context,
                           CustomPageRoute(

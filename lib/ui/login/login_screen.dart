@@ -91,6 +91,7 @@ class _LoginScreenState extends State<LoginScreen> implements LoginNavigator {
                         if (text == null || text.trim().isEmpty) {
                           return 'Please enter name';
                         }
+
                         return null;
                       },
                     ),
@@ -116,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> implements LoginNavigator {
                       },
                       validator: (text) {
                         if (text == null || text.trim().isEmpty) {
-                          return 'Please enter your type (doctor / patient)';
+                          return 'Please enter your type (doctor/patient)';
                         }
                         return null;
                       },
@@ -180,5 +181,6 @@ class _LoginScreenState extends State<LoginScreen> implements LoginNavigator {
     Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(CustomPageRoute(child: const AppLayout()));
     });
+
   }
 }

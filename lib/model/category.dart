@@ -1,7 +1,7 @@
 class Category {
   static const String sportsId = 'You & Dr';
-  static const String moviesId = 'You & Relatives';
-  static const String musicId = 'Relative & Dr';
+  static const String musicId = 'You & Relatives';
+  static const String moviesId = 'Relative & Dr';
   late String id;
   late String title;
   late String image;
@@ -12,12 +12,12 @@ class Category {
     if (id == sportsId) {
       title = 'You & Dr';
       image = 'assets/images/sports.png';
-    } else if (id == moviesId) {
-      title = 'You & Relatives';
-      image = 'assets/images/movies.png';
     } else if (id == musicId) {
-      title = 'Relative & Dr';
+      title = 'You & Relatives';
       image = 'assets/images/music.png';
+    } else if (id == moviesId) {
+      title = 'Relative & Dr';
+      image = 'assets/images/movies.png';
     }
   }
 
