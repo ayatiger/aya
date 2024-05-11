@@ -40,6 +40,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
         CacheHelper.saveData(key: 'image', value: myFile);
         CacheHelper.saveData(key: 'image2', value: myFile2);
       });
+
     } on PlatformException catch (e) {}
   }
 
