@@ -25,7 +25,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
   File? image;
 
   File? myFile;
-  File? myFile2;
 
   Future pickImage(ImageSource source, BuildContext context) async {
     try {
@@ -36,11 +35,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
       setState(() {
         this.image = imageTemporary;
         myFile = File(image.path);
-        myFile2 = File(image);
-        CacheHelper.saveData(key: 'image', value: myFile);
-        CacheHelper.saveData(key: 'image2', value: myFile2);
+        CacheHelper.saveData(key: 'image', value: this.image);
       });
-
+print( CacheHelper.getData(key:'image'));
+print(image);
     } on PlatformException catch (e) {}
   }
 
@@ -143,7 +141,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         ),
                                         child: ClipOval(
                                           child: Image.file(
-                                            CacheHelper.getData(key:'image2'),
+                                            CacheHelper.getData(key:'image'),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
